@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -33,6 +35,18 @@ export default function Home() {
             </a>{" "}
             center.
           </p>
+          <motion.div
+            className="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
+              Framer Motion is installed. This box animates in and on hover.
+            </p>
+          </motion.div>
         </div>
         <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
